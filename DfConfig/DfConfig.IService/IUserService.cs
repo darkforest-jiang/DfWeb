@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DfConfig.Model.User;
+using DfGeneral.RequestResponse;
 using DfHelper.EF.Base;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,33 +25,29 @@ public interface IUserService : IBaseService<DbContext>
     /// <summary>
     /// 创建账户
     /// </summary>
-    /// <param name="user"></param>
+    /// <param name="loginId"></param>
+    /// <param name="password"></param>
+    /// <param name="isAdmin"></param>
     /// <param name="ctsToken"></param>
     /// <returns></returns>
-    Task<bool> CreateUser(UserInfo user, CancellationToken ctsToken);
+    Task<Rr<bool>> CreateUser(string loginId, string password, bool isAdmin, CancellationToken ctsToken);
 
     /// <summary>
-    /// 修改账户
+    /// 修改用户账号名称
     /// </summary>
     /// <param name="userId"></param>
-    /// <param name="newLoginId"></param>
-    /// <param name="newPassword"></param>
-    /// <param name="ctsToken"></param>
-    /// <returns></returns>
-    Task<bool> EditUser(int userId, string newLoginId, string newPassword, CancellationToken ctsToken);
-
-    /// <summary>
-    /// 获取用户
-    /// </summary>
     /// <param name="loginId"></param>
     /// <param name="ctsToken"></param>
     /// <returns></returns>
-    Task<UserInfo?> GetUser(string loginId, CancellationToken ctsToken);
+    Task<Rr<bool>> AlterUserLoginId(int userId, string loginId, CancellationToken ctsToken);
 
     /// <summary>
-    /// 获取所有用户
+    /// 修改用户密码
     /// </summary>
+    /// <param name="userId"></param>
+    /// <param name="password"></param>
     /// <param name="ctsToken"></param>
     /// <returns></returns>
-    Task<IList<UserInfo>?> GetUsers(CancellationToken ctsToken);
+    Task<Rr<bool>> AlterUserPassword(int userId, string password, CancellationToken ctsToken);
+
 }

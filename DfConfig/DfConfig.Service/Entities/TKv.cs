@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DfConfig.Service.Models;
+namespace DfConfig.Service.Entities;
 
 public partial class TKv
 {
@@ -33,7 +33,7 @@ public partial class TKv
     /// <summary>
     /// 命名空间Id
     /// </summary>
-    public int? NpId { get; set; }
+    public int? NsId { get; set; }
 
     /// <summary>
     /// 注释

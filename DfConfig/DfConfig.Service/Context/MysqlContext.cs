@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using DfConfig.Service.Models;
+using DfConfig.Service.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DfConfig.Service.Context;
@@ -71,6 +71,20 @@ public partial class MysqlContext : DbContextBase
             entity.Property(e => e.EnvId).HasComment("环境Id");
         });
 
+        modelBuilder.Entity<TAppNamespace>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("tappnamespace");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasComment("主键Id");
+            entity.Property(e => e.AppId).HasComment("应用Id");
+            entity.Property(e => e.IsPublic).HasComment("命名空间属性 公共=1 私有=0");
+            entity.Property(e => e.NsId).HasComment("命名空间Id");
+        });
+
         modelBuilder.Entity<TEnv>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
@@ -93,7 +107,7 @@ public partial class MysqlContext : DbContextBase
 
             entity.ToTable("tkv");
 
-            entity.HasIndex(e => new { e.AppId, e.EnvId, e.Key, e.NpId }, "uk1").IsUnique();
+            entity.HasIndex(e => new { e.AppId, e.EnvId, e.Key, e.NsId }, "uk1").IsUnique();
 
             entity.Property(e => e.Id).HasComment("主键Id");
             entity.Property(e => e.AppId).HasComment("应用表主键Id");
@@ -104,7 +118,7 @@ public partial class MysqlContext : DbContextBase
             entity.Property(e => e.Notes)
                 .HasMaxLength(32)
                 .HasComment("注释");
-            entity.Property(e => e.NpId).HasComment("命名空间Id");
+            entity.Property(e => e.NsId).HasComment("命名空间Id");
             entity.Property(e => e.Status).HasComment("发布状态 0-未发布 已发布");
             entity.Property(e => e.Value)
                 .HasComment("Value")
@@ -118,10 +132,14 @@ public partial class MysqlContext : DbContextBase
             entity.ToTable("tnamespace");
 
             entity.Property(e => e.Id).HasComment("主键Id");
-            entity.Property(e => e.AppId).HasComment("应用表主键Id 空表示公共的");
+            entity.Property(e => e.AppId).HasComment("AppId");
+            entity.Property(e => e.IsPublic).HasComment("命名空间属性 公共=1 私有=0");
             entity.Property(e => e.NameSpace)
                 .HasMaxLength(32)
                 .HasComment("命名空间");
+            entity.Property(e => e.Notes)
+                .HasMaxLength(64)
+                .HasComment("备注");
         });
 
         modelBuilder.Entity<TUser>(entity =>

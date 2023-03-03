@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DfConfig.Service.Models;
+namespace DfConfig.Service.Entities;
 
 public partial class TEnv
 {

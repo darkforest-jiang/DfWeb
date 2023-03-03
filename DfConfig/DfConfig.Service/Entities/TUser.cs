@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DfConfig.Service.Models;
+namespace DfConfig.Service.Entities;
 
 public partial class TUser
 {
+    public TUser() { }
+
     /// <summary>
     /// 创建用户
     /// </summary>
@@ -12,6 +14,19 @@ public partial class TUser
     /// <param name="password"></param>
     /// <param name="isAdmin"></param>
     public TUser(string loginId, string password, bool isAdmin)
+    {
+        LoginId = loginId;
+        Password = password;
+        IsAdmin = isAdmin;
+    }
+
+    /// <summary>
+    /// 修改账户
+    /// </summary>
+    /// <param name="loginId"></param>
+    /// <param name="password"></param>
+    /// <param name="isAdmin"></param>
+    public void EditUser(string loginId, string password, bool isAdmin)
     {
         LoginId = loginId;
         Password = password;

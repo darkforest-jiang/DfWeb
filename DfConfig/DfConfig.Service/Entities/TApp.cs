@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DfConfig.Service.Models;
+namespace DfConfig.Service.Entities;
 
 public partial class TApp
 {
+    /// <summary>
+    /// 主键Id
+    /// </summary>
     public int Id { get; set; }
 
     /// <summary>

@@ -14,6 +14,6 @@ namespace DfGeneral.RequestResponse
         /// <summary>
         /// 参数
         /// </summary>
-        public T Parm { get; set; }
+        public T? Parm { get; set; }
     }
 }

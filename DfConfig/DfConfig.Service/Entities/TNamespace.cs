@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DfConfig.Service.Models;
+namespace DfConfig.Service.Entities;
 
 public partial class TNamespace
 {
@@ -16,7 +16,17 @@ public partial class TNamespace
     public string NameSpace { get; set; } = null!;
 
     /// <summary>
-    /// 应用表主键Id 空表示公共的
+    /// AppId
     /// </summary>
     public int? AppId { get; set; }
+
+    /// <summary>
+    /// 命名空间属性 公共=1 私有=0
+    /// </summary>
+    public bool IsPublic { get; set; }
+
+    /// <summary>
+    /// 备注
+    /// </summary>
+    public string? Notes { get; set; }
 }

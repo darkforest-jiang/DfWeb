@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace DfConfig.Service.Entities;
 
-public partial class TAppClient
+public partial class TAppNamespace
 {
     /// <summary>
-    /// 主键Id 自增
+    /// 主键Id
     /// </summary>
     public int Id { get; set; }
 
@@ -16,17 +16,12 @@ public partial class TAppClient
     public int AppId { get; set; }
 
     /// <summary>
-    /// 客户端Ip
+    /// 命名空间Id
     /// </summary>
-    public string ClientIp { get; set; } = null!;
+    public int NsId { get; set; }
 
     /// <summary>
-    /// 客户端端口号
+    /// 命名空间属性 公共=1 私有=0
     /// </summary>
-    public int ClientPort { get; set; }
-
-    /// <summary>
-    /// 环境Id
-    /// </summary>
-    public int? EnvId { get; set; }
+    public bool IsPublic { get; set; }
 }

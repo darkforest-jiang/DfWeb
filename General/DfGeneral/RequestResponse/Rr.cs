@@ -12,7 +12,7 @@ namespace DfGeneral.RequestResponse;
 /// </summary>
 public class Rr<T>
 {
-    // <summary>
+    /// <summary>
     /// 是否成功
     /// </summary>
     public bool IsSuccess { get; set; } = true;

@@ -23,7 +23,7 @@ namespace DfConfig.Server.Controllers
         /// <returns></returns>
         [AllowAnonymous]
         [HttpPost]
-        public async Task<Rr<bool>> GetIsFirstLogin()
+        public async ValueTask<Rr<bool>> GetIsFirstLogin()
         {
             var result = await _userService.GetIsFirstLogin();
             return new Rr<bool> { 
