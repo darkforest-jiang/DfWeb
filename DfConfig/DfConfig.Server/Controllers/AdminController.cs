@@ -1,5 +1,5 @@
 ﻿using DfConfig.IService;
-using DfConfig.Model;
+using DfConfig.Model.Admin;
 using DfGeneral.RequestResponse;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -24,10 +24,10 @@ namespace DfConfig.Server.Controllers
         /// <returns></returns>
         [AllowAnonymous]
         [HttpPost]
-        public async ValueTask<Rr<IList<AppInfo>?>> GetAppList()
+        public async ValueTask<Rr<IList<App>?>> GetApps()
         {
-            var result =  await _adminService.GetAppList();
-            return new Rr<IList<AppInfo>?> { 
+            var result =  await _adminService.GetApps();
+            return new Rr<IList<App>?> { 
                 Result = result
             };
         }

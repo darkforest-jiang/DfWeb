@@ -13,14 +13,24 @@ namespace DfGeneral.RequestResponse;
 public class Rr<T>
 {
     /// <summary>
+    /// 是否成功 1-成功
+    /// </summary>
+    public int Code { get; set; } = 1;
+
+    /// <summary>
     /// 是否成功
     /// </summary>
-    public bool IsSuccess { get; set; } = true;
+    public bool IsSuccess => Code == 1;
 
     /// <summary>
     /// 返回消息
     /// </summary>
     public string? Message { get; set; }
+
+    /// <summary>
+    /// 异常信息
+    /// </summary>
+    public Exception? Exception { get; set; }
 
     /// <summary>
     /// 返回结果

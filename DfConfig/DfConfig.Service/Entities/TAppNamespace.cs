@@ -20,8 +20,4 @@ public partial class TAppNamespace
     /// </summary>
     public int NsId { get; set; }
 
-    /// <summary>
-    /// 命名空间属性 公共=1 私有=0
-    /// </summary>
-    public bool IsPublic { get; set; }
 }

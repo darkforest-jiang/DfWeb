@@ -1,24 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace DfConfig.Service.Entities;
+namespace DfConfig.Model.Admin;
 
-public partial class TNamespace
+/// <summary>
+/// App命令空间
+/// </summary>
+public class AppNamespace
 {
-    /// <summary>
-    /// 主键Id
-    /// </summary>
-    public int Id { get; set; }
-
-    /// <summary>
-    /// 命名空间
-    /// </summary>
-    public string NameSpaceKey { get; set; } = null!;
-
     /// <summary>
     /// AppId
     /// </summary>
     public int? AppId { get; set; }
+
+    /// <summary>
+    /// 命名空间Id
+    /// </summary>
+    public int NsId { get; set; }
+
+    /// <summary>
+    /// 命名空间
+    /// </summary>
+    public string NsKey { get; set; }
 
     /// <summary>
     /// 命名空间属性 公共=1 私有=0

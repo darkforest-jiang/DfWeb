@@ -47,7 +47,7 @@ public class UserService : BaseService<DbContextBase>, IUserService
         if(isExists)
         {
             return new Rr<bool> { 
-                IsSuccess = false,
+                Code = 0,
                 Message = "账户名已存在"
             };
         }
@@ -70,7 +70,7 @@ public class UserService : BaseService<DbContextBase>, IUserService
         {
             return new Rr<bool>
             {
-                IsSuccess = false,
+                Code = 0,
                 Message = "账户不存在"
             };
         }
@@ -95,7 +95,7 @@ public class UserService : BaseService<DbContextBase>, IUserService
         if(user == null)
         {
             return new Rr<bool> { 
-                IsSuccess = false,
+                Code = 0,
                 Message = "账户不存在"
             };
         }

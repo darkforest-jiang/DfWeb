@@ -81,7 +81,6 @@ public partial class MysqlContext : DbContextBase
                 .ValueGeneratedNever()
                 .HasComment("主键Id");
             entity.Property(e => e.AppId).HasComment("应用Id");
-            entity.Property(e => e.IsPublic).HasComment("命名空间属性 公共=1 私有=0");
             entity.Property(e => e.NsId).HasComment("命名空间Id");
         });
 
@@ -134,7 +133,7 @@ public partial class MysqlContext : DbContextBase
             entity.Property(e => e.Id).HasComment("主键Id");
             entity.Property(e => e.AppId).HasComment("AppId");
             entity.Property(e => e.IsPublic).HasComment("命名空间属性 公共=1 私有=0");
-            entity.Property(e => e.NameSpace)
+            entity.Property(e => e.NameSpaceKey)
                 .HasMaxLength(32)
                 .HasComment("命名空间");
             entity.Property(e => e.Notes)

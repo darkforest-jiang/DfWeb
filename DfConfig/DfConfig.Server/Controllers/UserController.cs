@@ -27,7 +27,7 @@ namespace DfConfig.Server.Controllers
         {
             var result = await _userService.GetIsFirstLogin();
             return new Rr<bool> { 
-                IsSuccess = true,
+                Code = 0,
                 Result = result
             };
         }
