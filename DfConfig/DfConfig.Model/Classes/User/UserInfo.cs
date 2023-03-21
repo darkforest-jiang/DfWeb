@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DfConfig.Model.User
+namespace DfConfig.Model.Classes.User
 {
     /// <summary>
     /// 账号信息

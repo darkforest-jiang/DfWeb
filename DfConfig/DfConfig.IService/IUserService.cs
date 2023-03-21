@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DfConfig.Model.User;
+using DfConfig.Model.Classes.User;
 using DfGeneral.RequestResponse;
 using DfHelper.EF.Base;
 using Microsoft.EntityFrameworkCore;

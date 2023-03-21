@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DfConfig.Model.Admin;
+namespace DfConfig.Model.Classes.Admin;
 
 /// <summary>
-/// 应用信息
+/// 环境
 /// </summary>
-public class App
+public class AppEnv
 {
     /// <summary>
     /// 主键Id
@@ -17,12 +17,7 @@ public class App
     public int Id { get; set; }
 
     /// <summary>
-    /// 应用的Key
+    /// 运行环境名称
     /// </summary>
-    public string AppKey { get; set; } = null!;
-
-    /// <summary>
-    /// 应用名称
-    /// </summary>
-    public string AppName { get; set; } = null!;
+    public string Env { get; set; } = null!;
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DfConfig.Model.Admin;
+namespace DfConfig.Model.Classes.Admin;
 
 /// <summary>
 /// App配置

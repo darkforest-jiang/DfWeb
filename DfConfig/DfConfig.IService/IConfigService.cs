@@ -1,4 +1,4 @@
-﻿using DfConfig.Model.Config;
+﻿using DfConfig.Model.Classes.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,7 @@ public interface IConfigService
     /// <param name="envId"></param>
     /// <param name="ctsToken"></param>
     /// <returns></returns>
-    Task<IList<AppConfig>?> GetAppConfigs(int appId, int envId, CancellationToken ctsToken = default);
+    Task<IList<AppConfig>?> GetAppConfigs(string appKey, string env, CancellationToken ctsToken = default);
 
     /// <summary>
     /// 获取AppConfig
@@ -28,5 +28,5 @@ public interface IConfigService
     /// <param name="envId"></param>
     /// <param name="ctsToken"></param>
     /// <returns></returns>
-    Task<AppConfig?> GetAppConfig(int appId, int envId, string key, CancellationToken ctsToken = default);
+    Task<AppConfig?> GetAppConfig(string appKey, string env, string key, CancellationToken ctsToken = default);
 }

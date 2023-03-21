@@ -1,9 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using ProtoBuf.Grpc.ClientFactory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DfGeneral.Grpc;
+using DfConfig.Model.IGrpcService;
 
 namespace DfConfig.Client
 {
@@ -17,9 +20,12 @@ namespace DfConfig.Client
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static IServiceCollection AddDfConfigClient(this IServiceCollection services)
+        public static IServiceCollection AddDfConfigClient(this IServiceCollection services, Action<DfConfigOption> setupAction)
         {
+            DfConfigOption opt = new DfConfigOption();
+            setupAction(opt);
 
+            services.AddMyCodeFirstGrpcClient<IConfigGrpcService>(opt.ConfigServiceUrl);
 
             return services;
         }

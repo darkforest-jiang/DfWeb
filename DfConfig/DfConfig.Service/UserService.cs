@@ -1,5 +1,5 @@
 ﻿using DfConfig.IService;
-using DfConfig.Model.User;
+using DfConfig.Model.Classes.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;

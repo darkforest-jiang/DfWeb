@@ -1,5 +1,5 @@
 ﻿using DfConfig.IService;
-using DfConfig.Model.Admin;
+using DfConfig.Model.Classes.Admin;
 using DfGeneral.RequestResponse;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

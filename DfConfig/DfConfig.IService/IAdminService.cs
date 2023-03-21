@@ -1,4 +1,4 @@
-﻿using DfConfig.Model.Admin;
+﻿using DfConfig.Model.Classes.Admin;
 using DfGeneral.RequestResponse;
 using DfHelper.EF.Base;
 using Microsoft.EntityFrameworkCore;

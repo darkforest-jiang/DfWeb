@@ -1,5 +1,5 @@
 ﻿using DfConfig.IService;
-using DfConfig.Model.Admin;
+using DfConfig.Model.Classes.Admin;
 using DfConfig.Service.Context;
 using DfConfig.Service.Entities;
 using DfGeneral.RequestResponse;
